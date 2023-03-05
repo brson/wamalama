@@ -13,6 +13,7 @@ default-members = [
 anyhow = "1.0"
 env_logger = "0.10.0"
 thiserror = "1.0"
+extension-trait = "1.0.1"
 
 # For faster builds.
 [profile.dev.build-override]
