@@ -98,18 +98,30 @@ pub mod wasmir {
             I64Const(u64),
             F32Const(f32),
             F64Const(f64),
-            I32Unop(IUnop),
-            I64Unop(IUnop),
-            F32Unop(FUnop),
-            F64Unop(FUnop),
+            I32Unop(IUnOp),
+            I64Unop(IUnOp),
+            F32Unop(FUnOp),
+            F64Unop(FUnOp),
+            I32ITestOp(ITestOp),
+            I64ITestOp(ITestOp),
+            I32IRelOp(IRelOp),
+            I64IRelOp(IRelOp),
         }
 
-        pub enum IUnop {
+        pub enum IUnOp {
             Clz, Ctz, Popcnt,
         }
 
-        pub enum FUnop {
+        pub enum FUnOp {
             Abs, Neg, Sqrt, Ceil, Floor, Trunc, Nearest,
+        }
+
+        pub enum ITestOp {
+            Eqz,
+        }
+
+        pub enum IRelOp {
+            Eq, Ne, LtU, LtS, GtU, GtS, LeU, LeS, GeU, GeS,
         }
     }
 }
