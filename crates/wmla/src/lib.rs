@@ -1,7 +1,7 @@
 #![allow(unused)]
 
 pub mod wasmir {
-    mod types {
+    pub mod types {
         #[derive(Copy, Clone, Ord, PartialOrd, Eq, PartialEq, Debug)]
         pub enum NumType {
             I32, I64, F32, F64,
@@ -89,6 +89,27 @@ pub mod wasmir {
                     _ => None,
                 }).collect()
             }
+        }
+    }
+
+    pub mod instrs {
+        pub enum Instr {
+            I32Const(u32),
+            I64Const(u64),
+            F32Const(f32),
+            F64Const(f64),
+            I32Unop(IUnop),
+            I64Unop(IUnop),
+            F32Unop(FUnop),
+            F64Unop(FUnop),
+        }
+
+        pub enum IUnop {
+            Clz, Ctz, Popcnt,
+        }
+
+        pub enum FUnop {
+            Abs, Neg, Sqrt, Ceil, Floor, Trunc, Nearest,
         }
     }
 }
