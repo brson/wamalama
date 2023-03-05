@@ -1,0 +1,22 @@
+[workspace]
+resolver = "2"
+
+members = [
+  "crates/*",
+]
+
+default-members = [
+  "crates/wmlac",
+]
+
+[workspace.dependencies]
+anyhow = "1.0"
+env_logger = "0.10.0"
+thiserror = "1.0"
+
+# For faster builds.
+[profile.dev.build-override]
+opt-level = 3
+[profile.release.build-override]
+opt-level = 3
+
