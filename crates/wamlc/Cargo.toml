@@ -1,0 +1,7 @@
+[package]
+name = "wamlc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rustx.workspace = true

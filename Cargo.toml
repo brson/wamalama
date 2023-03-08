@@ -6,14 +6,17 @@ members = [
 ]
 
 default-members = [
-  "crates/wmlac",
+  "crates/wamlc",
 ]
 
-[workspace.dependencies]
-anyhow = "1.0"
-env_logger = "0.10.0"
-thiserror = "1.0"
-extension-trait = "1.0.1"
+[workspace.dependencies.rustx]
+path = "../rustx/crates/rustx"
+default-features = false
+features = [
+  "rx-feature-std",
+  "anyhow",
+  "extension-trait",
+]
 
 # For faster builds.
 [profile.dev.build-override]

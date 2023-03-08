@@ -57,7 +57,7 @@ pub mod types {
         Global(GlobalType),
     }
 
-    #[extension_trait::extension_trait]
+    #[rustx::extension_trait::extension_trait]
     impl VecExternTypeExt for Vec<ExternType> {
         fn funcs(&self) -> Vec<FuncType> {
             self.iter().filter_map(|t| match t {
